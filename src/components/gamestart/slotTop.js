@@ -5,7 +5,6 @@ import React from "react";
 const CardList = styled.div`
   width: 150px;
   height: 210px;
-  background: rgba(0, 0, 0, 0.2);
 `;
 
 const SlotTop = (props) => {

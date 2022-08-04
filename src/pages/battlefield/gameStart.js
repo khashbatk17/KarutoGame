@@ -7,6 +7,7 @@ import { audio } from "../../api/audio";
 import { randomNumber } from "../../api/reading";
 import { hittedCard } from "../../api/hittedCard";
 import Popup from "../../components/popup";
+import HittedCardPopUp from "../../components/hittedCardPopUp";
 
 const GameStart = (props) => {
   const location = useLocation();
@@ -16,8 +17,9 @@ const GameStart = (props) => {
   const [clicked, setClicked] = useState(true); // Memorization hugatsaa false bolwol ehelne
   const [index, setIndex] = useState(0); // Reading, PoemFlowtin's array index
   const [result2, setResult2] = useState(0); // Hitted card's resutl
-
-  let count = 0; // Card hit counter
+  const [cardHitted, setCardHitted] = useState(false); // Hitted card by just click
+  const [pickedCard, setPickedCard] = useState({}); // Hitted card from Karuta
+  const [count, setCount] = useState(1); // Hitted card
 
   const startReading = () => {
     if (minute === 0 && second === 0 && !clicked) {
@@ -49,6 +51,12 @@ const GameStart = (props) => {
       }
     }
   };
+
+  useEffect(() => {
+    !clicked && startReading();
+    poemRomaji();
+    setCount(1);
+  }, [index, clicked]);
 
   const timer = () => {
     const timeout = setTimeout(() => {
@@ -108,31 +116,42 @@ const GameStart = (props) => {
   };
 
   const hitTheCard = (cardId, slot) => {
+    setPickedCard(slot);
     const currentCardIndex = randomNumber[index];
     let result;
     if (index !== 0) {
-      count++;
+      setCount(count + 1);
       if (count < 2) {
         if (index < randomNumber.length) {
+          console.log(count);
+          setCardHitted(true);
           if (cardId === currentCardIndex.toString()) {
             result = "correct";
-            // setResult2(true);
+            setResult2(true);
             console.log(result);
           } else {
             result = "incorrect";
-            // setResult2(false);
+            setResult2(false);
             console.log(result);
           }
-          if (result === "correct") {
-            slot.cardId.splice(0, 1);
-            // const newSlot = slot;
-            // newSlot.cardId.splice(0, 1);
-            // setState({ ...state, slot: newSlot });
-          }
+          // if (result === "correct") {
+          //   slot.cardId.splice(0, 1);
+          //   // const newSlot = slot;
+          //   // newSlot.cardId.splice(0, 1);
+          //   // setState({ ...state, slot: newSlot });
+          // }
           hittedCard.push(result);
+          console.log(hittedCard);
         }
       }
     }
+  };
+
+  const toggleResult = () => {
+    setCardHitted(false);
+    result2 && setResult2(false); // after hit correct card set result to false
+    hittedCard[hittedCard.length - 1] === "correct" &&
+      pickedCard.cardId.splice(0, 1);
   };
 
   // ############################################## Mouse Click Style #########################################
@@ -145,7 +164,7 @@ const GameStart = (props) => {
     d.style.top = e.clientY + "px";
     d.style.left = e.clientX + "px";
     document.body.appendChild(d);
-    d.addEventListener("animationend", function () {
+    d.addEventListener("animationend", function() {
       d.parentElement.removeChild(d);
     });
   };
@@ -154,6 +173,9 @@ const GameStart = (props) => {
 
   return (
     <div className="ContainerField" id="clickEffect">
+      {cardHitted && (
+        <HittedCardPopUp toggleResult={toggleResult} slot={pickedCard} />
+      )}
       <Link to="/">
         <span className="GoBack">
           <img
@@ -162,12 +184,12 @@ const GameStart = (props) => {
           />
         </span>
       </Link>
-      {!clicked && startReading()}
+      {/* {!clicked && startReading()} */}
       <div className="timer" style={{ visibility: hidden }}>
         {timer()}
       </div>
       <div className="PoemFlow" id="PoemFlow">
-        {poemRomaji()}
+        {/* {poemRomaji()} */}
       </div>
       <div className="SlotContainer">
         {minute === 0 && second === 0 && clicked && (
@@ -179,7 +201,6 @@ const GameStart = (props) => {
             hittedCard={true}
           />
         )}
-        {result2 ? <div className="yoroshiku"></div> : ""}
         <div className="slot-container">
           {state.slotOrderTop.map((slotTop) => {
             const slot = state[slotTop];

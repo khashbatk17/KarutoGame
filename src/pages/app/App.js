@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import css from "./style.module.css";
 import shinobu from "../../api/shinobu.png";
+import karutaImage from "../../api/karutaImage.webp";
 // import Field from "../battlefield/field";
 
 class App extends React.Component {
@@ -18,10 +19,7 @@ class App extends React.Component {
         <main>
           {/* <div className="cherry-blossom"></div> */}
           <figure>
-            <img
-              src="https://play-lh.googleusercontent.com/vB-Lpsu-j3HrP3B_dklyHRLcOeVICT90C_pUisBCbcQ7cDEkBdXXjovrlP_gxe_2Ka4=w2560-h1440-rw"
-              alt="karuta"
-            />
+            <img src={karutaImage} alt="karuta" />
             <img src={shinobu} alt="shinobu" className={css.Image} />
           </figure>
           <div className={css.Buttons}>

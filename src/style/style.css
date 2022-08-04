@@ -116,9 +116,9 @@
         display: grid;
         width: 80%;
         margin: 0 auto;
-        grid-template-columns: repeat(7, 150px);
+        grid-template-columns: repeat(8, 150px);
         grid-template-rows: repeat(2, 210px);
-        column-gap: 10px;
+        column-gap: 8px;
         row-gap: 40px;
         place-content: center;
     }
@@ -134,24 +134,33 @@
     }
 
     .fVgtiZ:nth-child(3)  {
-        grid-column: span 2;
+        grid-column: span 3;
     }
     .fVgtiZ:nth-child(9)  {
-        grid-column: span 2;
+        grid-column: span 3;
     }
 
     .gRaWZ:nth-child(3)  {
-        grid-column: span 2;
+        grid-column: span 3;
     }
     .gRaWZ:nth-child(9)  {
-        grid-column: span 2;
+        grid-column: span 3;
     }
 
     .bMVSgn:nth-child(3) {
-        grid-column: span 2;
+        grid-column: span 3;
     }
     .bMVSgn:nth-child(9) {
-        grid-column: span 2;
+        grid-column: span 3;
+    }
+
+    /* class after remove background color from CardList in gamestart/slotTop*/
+
+    .iPhjab:nth-child(3) {
+        grid-column: span 3;
+    }
+    .iPhjab:nth-child(9) {
+        grid-column: span 3;
     }
 
 
@@ -261,7 +270,7 @@ div.clickEffect {
     pointer-events: none;
 }
 
-.yoroshiku {
+.yoroshiku, .yoroshiku2 {
     left: 0;
     top: 0;
     right: 0;
@@ -271,6 +280,12 @@ div.clickEffect {
     justify-content: center;
     background-color: rgb(0, 0, 0, 0.5);
     z-index: 3;
+}
+
+.yoroshiku2 {
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.2);
 }
 
 .yoroshiku .text {
@@ -300,4 +315,45 @@ div.clickEffect {
     100% {
         width: 150px;
     }
+}
+
+.Shadow2 {
+    box-shadow: inset 0 300px 500px rgba(0,0,0,0.9), inset 0 -300px 500px rgba(0,0,0,0.9  );
+ }
+
+.yoroshiku2 figure {
+    margin: 50px auto 50px auto;
+    width: 250px;
+    position: relative;
+}
+
+.yoroshiku2 span, .time  {
+    font-size: 30px;
+    color: #fff;
+}
+
+.yoroshiku2 figure img {
+    width: 100%;
+}
+
+.yoroshiku2 .status {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.yoroshiku2 figure .Syllable {
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-50%);
+    bottom: 10px;
+    left: 50%;
+    color: red;
+    font-weight:bold;
+    font-size: 30px;
+}
+
+.CardList {
+    width: 150px;
+    height: 210px;
+    background: rgba(0, 0, 0, 0.2);
 }
