@@ -11,7 +11,7 @@ const HittedCardPopUp = (props) => {
         <span className="Syllable">{cards[props.slot.cardId].syllable}</span>
       </figure>
       <div className="status">
-        <div className="time">0.150 sec</div>
+        <div className="time">+{props.second / 1000} sec</div>
       </div>
     </div>
   );

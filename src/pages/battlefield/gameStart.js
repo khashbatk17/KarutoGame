@@ -16,10 +16,11 @@ const GameStart = (props) => {
   const [minute, setMinute] = useState(0);
   const [clicked, setClicked] = useState(true); // Memorization hugatsaa false bolwol ehelne
   const [index, setIndex] = useState(0); // Reading, PoemFlowtin's array index
-  const [result2, setResult2] = useState(0); // Hitted card's resutl
+  const [result2, setResult2] = useState(false); // Hitted card's result | init was 0 before
   const [cardHitted, setCardHitted] = useState(false); // Hitted card by just click
   const [pickedCard, setPickedCard] = useState({}); // Hitted card from Karuta
   const [count, setCount] = useState(1); // Hitted card
+  const [sec, setSec] = useState(0); // Hitted card
 
   const startReading = () => {
     if (minute === 0 && second === 0 && !clicked) {
@@ -57,6 +58,35 @@ const GameStart = (props) => {
     poemRomaji();
     setCount(1);
   }, [index, clicked]);
+
+  useEffect(() => {
+    const current = new Date();
+    let second = 0;
+    let secCount = setInterval(() => {
+      if (index !== 0 && index < randomNumber.length) {
+        if ((!cardHitted && !result2) || (cardHitted && !result2)) {
+          second++;
+          current.setMilliseconds(second);
+        }
+      }
+    }, 1);
+    setSec(current.getMilliseconds(second));
+    return () => {
+      clearInterval(secCount);
+    };
+  }, [index]);
+
+  useEffect(() => {
+    if (cardHitted && result2) {
+      setCardHitted(false);
+      setResult2(false); // after hit correct card set result to false
+      hittedCard[hittedCard.length - 1] === "correct" &&
+        pickedCard.cardId.splice(0, 1);
+    }
+    if (cardHitted && !result2) {
+      setCardHitted(false);
+    }
+  }, [index]);
 
   const timer = () => {
     const timeout = setTimeout(() => {
@@ -173,8 +203,12 @@ const GameStart = (props) => {
 
   return (
     <div className="ContainerField" id="clickEffect">
-      {cardHitted && (
-        <HittedCardPopUp toggleResult={toggleResult} slot={pickedCard} />
+      {cardHitted && result2 && (
+        <HittedCardPopUp
+          toggleResult={toggleResult}
+          slot={pickedCard}
+          second={sec}
+        />
       )}
       <Link to="/">
         <span className="GoBack">

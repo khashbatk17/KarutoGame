@@ -118,7 +118,7 @@
         margin: 0 auto;
         grid-template-columns: repeat(8, 150px);
         grid-template-rows: repeat(2, 210px);
-        column-gap: 8px;
+        column-gap: 5px;
         row-gap: 40px;
         place-content: center;
     }
