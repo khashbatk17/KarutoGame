@@ -1,0 +1,97 @@
+header {
+    display: flex!important;
+    background-image: linear-gradient(to bottom,#fbfbfb,rgba(242,242,242,.25));
+    border-bottom: 1px solid #d5d5d5;
+    height: 60px;
+    align-items: center;
+}
+ul {
+    width: 70%;
+    margin: 0 auto!important; 
+    list-style-type: none;
+    padding: 0!important;;
+    overflow: hidden;
+  }
+  
+  li {
+    float: right;
+    display: block;
+    color: #1b1c1d;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  li:hover {
+    background-color: #e8e8e8;
+  }
+
+.Signup {
+    background-color: #8c0!important;
+    color: #fff;
+  }
+
+.Signup:hover {
+  filter: brightness(1.2);
+}
+
+.Logo {
+    float: left;
+}
+
+main {
+    width: 70%;
+    height: 80vh;
+    margin: 50px auto;
+}
+
+figure {
+    width: 60%;
+    float: left;
+    position: relative;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.Image {
+  position: absolute;
+  width: 200px;
+  left: -100px;
+  bottom: -150px;
+  /* transform:rotate(-40deg); */
+}
+
+.Buttons {
+    width: calc(40% - 110px);
+    height: 400px;
+    margin-left: 30px;
+    float: right;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-rows: 50px 50px;
+    row-gap: 50px;
+}
+
+.Buttons input {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #8c0!important;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.Buttons input:hover {
+    box-shadow: 0 0.7rem 0.9rem 0.05rem rgba(0,0,0,0.1);
+    filter: brightness(1.1);
+}

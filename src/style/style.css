@@ -1,0 +1,303 @@
+.Container, .ContainerField {
+    background-image: url('https://ouchjp.github.io/KarutaTrainer/static/media/seiryu-01.2fdb62b1.jpg');
+    background-attachment: fixed;
+    width: 100%;
+    /* height: 100%; */
+    position: absolute;
+    filter:brightness(1.3);
+}
+
+.ContainerField {
+    height: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+.Shadow {
+   box-shadow: inset 0 0 500px #000000;
+}
+
+.GoBack {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px; 
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    /* background-image: url('https://icon-library.com/images/quit-icon/quit-icon-13.jpg'); */
+}
+
+.GoBack:hover {
+    background-color: #fff;
+}
+
+.GoBack img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ######### CARD ############################################################################################################## */
+
+.card {
+    /* display: grid; */
+    width: 200px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* height: 200px; */
+}
+
+.card-img {
+    width: 150px;
+}
+
+.card-img img {
+    width: 100%;
+}
+
+.number {
+    display: block;
+    background-color: #618961;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tittle {
+    color: #000;
+}
+
+
+/* ######### CARDLIST ############################################################################################################## */
+
+.main {
+    display: grid;
+    width: 90%;
+    margin: 100px auto;
+    grid-template-columns: repeat(7, 200px);
+    grid-template-rows: repeat(15, 460px);
+    gap: 50px;
+}
+
+/* ################################ CHERRY BLOSSOM FALLING ############################################################# */
+
+/* .cherry-blossom:after {
+    filter: hue-rotate(0deg);
+    
+    pointer-events: none !important;
+    position: fixed;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url(https://i.imgur.com/QqP0mWL.png);
+    animation: SAKURA 12s linear infinite;
+    z-index: -5;
+    }
+    @keyframes SAKURA {
+    0% { background-position: 0 0, 0 0, 0 0; }
+    100% { background-position: 500px 1000px, 400px 400px, 300px 300px; }
+    } */
+
+
+    /* ############################# FIELD ######################################################################## */
+
+    .slot-container {
+        display: grid;
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: repeat(7, 150px);
+        grid-template-rows: repeat(2, 210px);
+        column-gap: 10px;
+        row-gap: 40px;
+        place-content: center;
+    }
+
+    .card-container {
+        display: flex;
+        width: 90%;
+        margin: 70px auto 0 auto;
+    }
+
+    .SlotContainer {
+        margin: 100px 0 0 0;
+    }
+
+    .fVgtiZ:nth-child(3)  {
+        grid-column: span 2;
+    }
+    .fVgtiZ:nth-child(9)  {
+        grid-column: span 2;
+    }
+
+    .gRaWZ:nth-child(3)  {
+        grid-column: span 2;
+    }
+    .gRaWZ:nth-child(9)  {
+        grid-column: span 2;
+    }
+
+    .bMVSgn:nth-child(3) {
+        grid-column: span 2;
+    }
+    .bMVSgn:nth-child(9) {
+        grid-column: span 2;
+    }
+
+
+/* ############################################################ READY ######################################*/
+
+.Ready {
+    position: absolute;
+    width:  150px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 30px;
+    text-align: center;
+    top: calc(50% - 150px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55787e;
+    color: rgb(192, 192, 192);
+    border-radius: 20px;
+}
+
+.Ready:hover {
+    box-shadow: 0 0.7rem 0.9rem 0.05rem rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+
+/* ###################################### MATCH ##################################################################################################################### */
+
+.PoemFlow {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 80px auto;
+    background-color: rgba(42, 44, 22, 0.7);
+    position: relative;
+    /* filter: blur(7px); */
+}
+
+.target{
+    animation: flowing 60s linear;
+    transform: translateX(100%);
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    margin: 0;
+  }
+  
+@keyframes flowing {
+100% {
+    transform: translateX(-100%);
+}
+}
+
+.PoemFlow p {
+    color: white;   
+    inline-size: 100%;
+    /* overflow-wrap: break-word; */
+    white-space: nowrap; 
+}
+
+.timer {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 20px;
+    border: 3px solid #000;
+}
+
+div.clickEffect {
+    position: fixed;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #000;
+    border-radius: 50%;
+    animation: clickEffect 0.4s ease-out;
+    z-index: 99999;
+}
+@keyframes clickEffect {
+0% {
+    opacity: 1;
+    width: 0.5em;
+    height: 0.5em;
+    margin: -0.25em;
+    border-width: 0.5em;
+}
+100% {
+    opacity: 0.2;
+    width: 15em;
+    height: 15em;
+    margin: -7.5em;
+    border-width: 0.03em;
+}
+}
+
+#cursor{
+    width: 30px;
+    height: 30px;
+    background-color:rgba(250, 128, 114, 0.774);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #fa8072;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+}
+
+.yoroshiku {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+.yoroshiku .text {
+    margin-top: 200px!important;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    width: 500px;
+    height: 200px;
+    border-radius: 20px;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+}
+
+.yoroshiku p {
+    font-size: 18px;
+}
+
+.imgStyle {
+    animation: imgStylee 0.2s linear;
+}
+
+@keyframes imgStylee {
+    50% {
+        width: 160px;
+    }
+    100% {
+        width: 150px;
+    }
+}
