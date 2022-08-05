@@ -5,16 +5,30 @@ import { images } from "../../api/images";
 
 const KaContainer = styled.div`
   width: 150px;
+  height: 210px;
   position: relative;
 `;
 
 const Karuta = (props) => {
   const [cardClicked, setCardClicked] = useState("");
+  const [imgShake, setImgShake] = useState("");
   return (
     <KaContainer
-      className={cardClicked}
+      id={"kaContainer" + props.card.number}
+      className={cardClicked + " " + imgShake}
       onClick={() => {
         setCardClicked("imgStyle");
+
+        setImgShake("imgShake");
+        let kaco = document.getElementById("kaContainer" + props.card.number);
+        let divShadow = document.createElement("div");
+        divShadow.setAttribute("class", "imgShadow");
+        kaco.appendChild(divShadow);
+        setTimeout(() => {
+          setImgShake("");
+          kaco.removeChild(divShadow);
+        }, 500);
+
         setTimeout(() => {
           setCardClicked("");
         }, 100);

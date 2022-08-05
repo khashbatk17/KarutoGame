@@ -116,7 +116,7 @@
         display: grid;
         width: 80%;
         margin: 0 auto;
-        grid-template-columns: repeat(8, 150px);
+        grid-template-columns: repeat(7, 150px);
         grid-template-rows: repeat(2, 210px);
         column-gap: 5px;
         row-gap: 40px;
@@ -134,33 +134,33 @@
     }
 
     .fVgtiZ:nth-child(3)  {
-        grid-column: span 3;
+        grid-column: span 2;
     }
     .fVgtiZ:nth-child(9)  {
-        grid-column: span 3;
+        grid-column: span 2;
     }
 
     .gRaWZ:nth-child(3)  {
-        grid-column: span 3;
+        grid-column: span 2;
     }
     .gRaWZ:nth-child(9)  {
-        grid-column: span 3;
+        grid-column: span 2;
     }
 
     .bMVSgn:nth-child(3) {
-        grid-column: span 3;
+        grid-column: span 2;
     }
     .bMVSgn:nth-child(9) {
-        grid-column: span 3;
+        grid-column: span 2;
     }
 
     /* class after remove background color from CardList in gamestart/slotTop*/
 
     .iPhjab:nth-child(3) {
-        grid-column: span 3;
+        grid-column: span 2;
     }
     .iPhjab:nth-child(9) {
-        grid-column: span 3;
+        grid-column: span 2;
     }
 
 
@@ -196,6 +196,7 @@
     margin: 80px auto;
     background-color: rgba(42, 44, 22, 0.7);
     position: relative;
+    backdrop-filter: blur(2px);
     /* filter: blur(7px); */
 }
 
@@ -331,6 +332,19 @@ div.clickEffect {
     font-size: 30px;
     color: #fff;
 }
+.yoroshiku2 .text  {
+    font-size: 20px;
+    color: #fff;
+}
+
+@keyframes secondEffect {
+    30% {
+        font-size: 40px;
+    }
+    100% {
+        font-size: 40px;
+    }
+}
 
 .yoroshiku2 figure img {
     width: 100%;
@@ -356,4 +370,41 @@ div.clickEffect {
     width: 150px;
     height: 210px;
     background: rgba(0, 0, 0, 0.2);
+}
+
+.imgShake {
+    animation: shake 0.5s; 
+    animation-iteration-count: 2;
+}
+
+.imgShadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 10px 30px rgba(163, 33, 33, 0.9), inset 0 -10px 30px rgba(163, 33, 33, 0.9);
+}
+
+/*  shake card after hit incorrect card */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.rotating {
+    animation: imageRotate 0.5s;
+}
+
+@keyframes imageRotate {
+    100% {transform: rotate(360deg);}   
 }

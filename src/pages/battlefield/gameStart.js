@@ -8,6 +8,7 @@ import { randomNumber } from "../../api/reading";
 import { hittedCard } from "../../api/hittedCard";
 import Popup from "../../components/popup";
 import HittedCardPopUp from "../../components/hittedCardPopUp";
+import GameOver from "../../components/gameOver";
 
 const GameStart = (props) => {
   const location = useLocation();
@@ -21,6 +22,10 @@ const GameStart = (props) => {
   const [pickedCard, setPickedCard] = useState({}); // Hitted card from Karuta
   const [count, setCount] = useState(1); // Hitted card
   const [sec, setSec] = useState(0); // Hitted card
+  const [gameOver, setGameOver] = useState(false); // Hitted card
+  // Pass to gameOver | status component
+  const [noHit, setNoHit] = useState(0);
+  const [storedSecond, setStoredSecond] = useState([]);
 
   const startReading = () => {
     if (minute === 0 && second === 0 && !clicked) {
@@ -42,13 +47,16 @@ const GameStart = (props) => {
               setIndex(index + 1);
             } else if (hittedCard.length < index) {
               console.log("No hit");
+              setNoHit(noHit + 1);
               setIndex(index + 1);
             }
           }
         });
       }
       if (index === randomNumber.length) {
-        console.log("Game Over");
+        setTimeout(() => {
+          setGameOver(true);
+        }, 2000);
       }
     }
   };
@@ -69,7 +77,7 @@ const GameStart = (props) => {
           current.setMilliseconds(second);
         }
       }
-    }, 1);
+    }, 3);
     setSec(current.getMilliseconds(second));
     return () => {
       clearInterval(secCount);
@@ -153,9 +161,9 @@ const GameStart = (props) => {
       setCount(count + 1);
       if (count < 2) {
         if (index < randomNumber.length) {
-          console.log(count);
           setCardHitted(true);
           if (cardId === currentCardIndex.toString()) {
+            setStoredSecond([...storedSecond, sec]);
             result = "correct";
             setResult2(true);
             console.log(result);
@@ -171,7 +179,6 @@ const GameStart = (props) => {
           //   // setState({ ...state, slot: newSlot });
           // }
           hittedCard.push(result);
-          console.log(hittedCard);
         }
       }
     }
@@ -208,6 +215,13 @@ const GameStart = (props) => {
           toggleResult={toggleResult}
           slot={pickedCard}
           second={sec}
+        />
+      )}
+      {gameOver && (
+        <GameOver
+          hittedCard={hittedCard}
+          noHit={noHit}
+          storedSecond={storedSecond}
         />
       )}
       <Link to="/">
