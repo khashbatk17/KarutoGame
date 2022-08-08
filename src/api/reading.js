@@ -3,7 +3,7 @@ import { currentCardId } from "../pages/battlefield/gameStart";
 
 export const randomNumber = [0];
 // slots.slotBottom.slotBottom1.cardId.length + 1
-while (randomNumber.length < 3) {
+while (randomNumber.length < slots.slotBottom.slotBottom1.cardId.length + 1) {
   const r = Math.floor(Math.random() * 100) + 1;
 
   if (

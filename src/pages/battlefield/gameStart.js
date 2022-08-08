@@ -140,7 +140,7 @@ const GameStart = (props) => {
       if (index < randomNumber.length) {
         const p = document.createElement("p");
         p.setAttribute("class", "target");
-        p.innerHTML = index + " " + romaji[index];
+        p.innerHTML = romaji[index];
         const PoemFlow = document.getElementById("PoemFlow");
         PoemFlow.appendChild(p);
       }
