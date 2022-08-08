@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useReducer } from "react";
 import { useLocation } from "react-router-dom";
 import SlotTop from "../../components/gamestart/slotTop";
 import { cards } from "../../api/cards";
@@ -9,6 +9,8 @@ import { hittedCard } from "../../api/hittedCard";
 import Popup from "../../components/popup";
 import HittedCardPopUp from "../../components/hittedCardPopUp";
 import GameOver from "../../components/gameOver";
+
+export let currentCardId = [];
 
 const GameStart = (props) => {
   const location = useLocation();
