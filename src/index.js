@@ -3,12 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./pages/app/App";
 import reportWebVitals from "./reportWebVitals";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Router,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Field from "./pages/battlefield/field";
 import CardList from "./pages/cardlist/cardlist";
 import GameStart from "./pages/battlefield/gameStart";
