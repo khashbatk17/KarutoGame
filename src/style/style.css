@@ -178,6 +178,13 @@
         grid-column: span 2;
     }
 
+    .dYksMe:nth-child(3) {
+        grid-column: span 2;
+    }
+    .dYksMe:nth-child(9) {
+        grid-column: span 2;
+    }
+
 
 /* ############################################################ READY ######################################*/
 
