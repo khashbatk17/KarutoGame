@@ -163,6 +163,14 @@
         grid-column: span 2;
     }
 
+    /* after deploy */
+    .MQUua:nth-child(3) {
+        grid-column: span 2;
+    }
+    .MQUua:nth-child(9) {
+        grid-column: span 2;
+    }
+
 
 /* ############################################################ READY ######################################*/
 
