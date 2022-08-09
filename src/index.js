@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./pages/app/App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Field from "./pages/battlefield/field";
 import CardList from "./pages/cardlist/cardlist";
 import GameStart from "./pages/battlefield/gameStart";
@@ -13,12 +13,12 @@ import GameStart from "./pages/battlefield/gameStart";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router Basename="/karu_test3">
-    <Switch>
+    <Routes>
       <Route path="/" exact element={<App />} />
       <Route path="/battle" element={<Field />} />
       <Route path="/cardlist" element={<CardList />} />
       <Route path="/gamestart" element={<GameStart />} />
-    </Switch>
+    </Routes>
   </Router>
 );
 
