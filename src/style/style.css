@@ -171,6 +171,13 @@
         grid-column: span 2;
     }
 
+    .lileUP:nth-child(3) {
+        grid-column: span 2;
+    }
+    .lileUP:nth-child(9) {
+        grid-column: span 2;
+    }
+
 
 /* ############################################################ READY ######################################*/
 
