@@ -2,7 +2,7 @@
   "homepage": "https://mashbattemuulen.github.io/karu_test3/",
   "name": "karutatest3",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@atlaskit/css-reset": "^6.3.13",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
