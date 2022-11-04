@@ -1,4 +1,5 @@
 import React from "react";
+//card list uudeer ashiglasan card haruulah comp
 
 const Card = (props) => {
   const arr = props.firstHalf.split("\n");

@@ -1,4 +1,5 @@
 import { slots } from "./slots";
+// eslint-disable-next-line
 import { currentCardId } from "../pages/battlefield/gameStart";
 
 export const randomNumber = [0];

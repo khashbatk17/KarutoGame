@@ -12,7 +12,7 @@ import GameStart from "./pages/battlefield/gameStart";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Router basename="/karu_test3">
+  <Router basename="/">
     <Routes>
       <Route path="/" exact element={<App />} />
       <Route path="/battle" element={<Field />} />

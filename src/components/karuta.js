@@ -35,3 +35,5 @@ class Karuta extends React.Component {
 }
 
 export default Karuta;
+
+//card chireh

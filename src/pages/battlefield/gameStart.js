@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useState, useMemo, useEffect, useReducer } from "react";
 import { useLocation } from "react-router-dom";
 import SlotTop from "../../components/gamestart/slotTop";
@@ -14,6 +15,7 @@ export let currentCardId = [];
 
 const GameStart = (props) => {
   const location = useLocation();
+  // eslint-disable-next-line
   const [state, setState] = useState(location.state);
   const [second, setSecond] = useState(5);
   const [minute, setMinute] = useState(0);

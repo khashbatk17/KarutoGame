@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import Card from "../../components/card";
+import Card from "../../components/card";//card importing
 import { cards } from "../../api/cards";
 import { images } from "../../api/images";
 import "../../style/style.css";
 import React from "react";
 // import audio from "../../api/Hyakunin_Isshu/Hyakunin_Isshu (0).MP3";
-
+//Cardlist page
 const CardList = () => {
   const arrCards = cards.map((c, index) => {
     return (
-      <Card
+      <Card//component duudah
         key={index}
         syllable={c.syllable}
         name={c.name}

@@ -4,6 +4,7 @@ import css from "./style.module.css";
 import shinobu from "../../api/shinobu.png";
 import karutaImage from "../../api/karutaImage.webp";
 // import Field from "../battlefield/field";
+//Home page
 
 class App extends React.Component {
   render() {
